@@ -1,17 +1,17 @@
-###### Mihai-Nicolae Dițu 312CC
-## Documentație Fossil Fairy
-### Partea I – Construirea și explorarea dataset-ului
+Mihai-Nicolae Dițu 312CC
+# Documentație Fossil Fairy
+## Partea I – Construirea și explorarea dataset-ului
 
 
 ---
 
-#### Tipul problemei
+### Tipul problemei
 
 Setul de date propus este destinat unei **probleme de clasificare**. Obiectivul este **prezicerea speciei unei fosile a unui mamifer** pe baza caracteristicilor fizice, a locației geografice, a vechimei și a geologiei.
 
 ---
 
-#### Structura setului de date
+### Structura setului de date
 
 Setul de date original provine din baza de date paleobiodb.org, de unde am cerut **toate măsurătorile înregistrate făcute pe fosile de mamifere**. Cererea a venit cu un tabel masiv cu 56 de coloane (cu 38346 de rânduri), dintre care am extras și am combinat coloane până s-a ajuns la 11 coloane relevante (cu 6791 de rânduri după procesare):
 - **specimen_part**: partea anatomică a fosilei (m1 = primul molar inferior, M2 = al doilea molar superior etc.)
@@ -46,7 +46,7 @@ Seturile preprocesate au fost exportate în trei fișiere separate: new_data.csv
 
 ---
 
-#### Procesarea datelor
+### Procesarea datelor
 
 **Am folosit agregări pentru a combina măsurătorile (lungime și lățime)** și a obține câte un singur rând per specimen pentru length și width. Deși existau date pentru unele specimene și pentru înălțime, circumferință, rază sau masă, acestea erau mult prea rare pentru a fi incluse în setul final.
 
@@ -74,7 +74,7 @@ Procentul valorilor lipsă (NaN) înainte de procesare:
 
 ---
 
-#### Statistici descriptive
+### Statistici descriptive
 
 Rezultatul funcției describe() pe setul de antrenare:
 
@@ -112,7 +112,7 @@ Se observă o variație mare a dimensiunilor specimenelor, ceea ce sugerează pr
 
 ---
 
-#### Analiza distribuției variabilelor numerice
+### Analiza distribuției variabilelor numerice
 
 Am folosit **histograme** pentru a analiza forma distribuției variabilelor numerice în setul de antrenare și în cel de testare.
 
@@ -133,7 +133,7 @@ Coordonatele prezintă vârfuri pe anumite latitudini și longitudini, ceea ce r
 
 ---
 
-#### Analiza distribuției variabilelor categorice
+### Analiza distribuției variabilelor categorice
 
 Am folosit **countplot-uri** pentru a analiza distribuțiile variabilelor categorice în setul de antrenare și în cel de testare.
 
@@ -153,7 +153,7 @@ Variabilele legate de geologie sunt dominate de unele categorii suprareprezentat
 
 ---
 
-#### Detectarea outlierilor
+### Detectarea outlierilor
 
 Pentru a evalua dispersia și extremele, am folosit grafice de tip **boxplot**.
 
@@ -171,7 +171,7 @@ Vârstele și coordonatele au o dispersie mai ușoară. Outlierii reprezintă de
 
 ---
 
-#### Analiza corelațiilor
+### Analiza corelațiilor
 
 Pentru evaluarea corelațiilor, am folosit **heatmap-uri** pentru variabilele pereche.
 
@@ -189,7 +189,7 @@ Harta coordonatelor este probabil cea mai interesantă: pe ea se pot observa umb
 
 ---
 
-#### Relația cu variabila țintă
+### Relația cu variabila țintă
 
 Am folosit **violinplot-uri** pentru reprezentarea relațiilor dintre fiecare variabilă și numele speciei. M-am limitat la doar 200 de rânduri din setul întreg, selectate randomizat, deoarece rularea pe setul complet ar fi supraaglomerat graficele (mai mult decât sunt deja) și scripturile ar fi rulat mult prea mult.
 
@@ -217,7 +217,7 @@ Graficele pentru variabilele categorice arată că unele specii vor fi mult mai 
 
 ---
 
-#### Antrenarea și evaluarea modelului de bază
+### Antrenarea și evaluarea modelului de bază
 
 Pentru **prepocesare**, variabilele categorice au fost codificate folosind LabelEncoder, iar variabilele numerice continue au fost scalate folosind MinMaxScaler și apoi StandardScaler (așa cum am învățat la laborator!).
 
@@ -233,7 +233,7 @@ Modelele, encoderele și matricea de confuzie au fost serializate cu joblib pent
 
 ---
 
-#### Interfața grafică
+### Interfața grafică
 
 Folosind Gradio am creat **Fossil Fairy**, ce poate clasifica instantaneu orice fosilă descoperită de utilizator (sau, mai degrabă, inventată).
 
@@ -245,7 +245,7 @@ La apăsarea marelui buton **PREDICT**, sunt aplicate encoderele pentru inputuri
 
 ---
 
-#### Rulare
+### Rulare
 
 Mai întâi, rulează cele trei blocuri din `basic_model.ipynb` pentru crearea modelului. Poți ajusta parametrii dacă dorești.
 După aceea, rulează comanda `gradio app.py` în directorul Surse, după care se deschide interfața web. Enjoy!
