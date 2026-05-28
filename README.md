@@ -13,7 +13,7 @@ Setul de date propus este destinat unei **probleme de clasificare**. Obiectivul 
 
 ### Structura setului de date
 
-Setul de date original provine din baza de date paleobiodb.org, de unde am cerut **toate măsurătorile înregistrate făcute pe fosile de mamifere**. Cererea a venit cu un tabel masiv cu 56 de coloane (cu 38346 de rânduri), dintre care am extras și am combinat coloane până s-a ajuns la 11 coloane relevante (cu 6791 de rânduri după procesare):
+Setul de date original provine din baza de date [paleobiodb.org](https://paleobiodb.org/), de unde am cerut **toate măsurătorile înregistrate făcute pe fosile de mamifere**. Cererea a venit cu un tabel masiv cu 56 de coloane (cu 38346 de rânduri), dintre care am extras și am combinat coloane până s-a ajuns la 11 coloane relevante (cu 6791 de rânduri după procesare):
 - **specimen_part**: partea anatomică a fosilei (m1 = primul molar inferior, M2 = al doilea molar superior etc.)
 
 - **length**: lungimea părții în milimetri
