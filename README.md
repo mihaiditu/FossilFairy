@@ -1,7 +1,5 @@
 # Documentație Fossil Fairy
 
----
-
 ### Tipul problemei
 
 Setul de date propus este destinat unei **probleme de clasificare**. Obiectivul este **prezicerea speciei unei fosile a unui mamifer** pe baza caracteristicilor fizice, a locației geografice, a vechimei și a geologiei.
