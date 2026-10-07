@@ -1,6 +1,4 @@
 # Documentație Fossil Fairy
-## Partea I – Construirea și explorarea dataset-ului
-
 
 ---
 
