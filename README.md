@@ -1,4 +1,3 @@
-Mihai-Nicolae Dițu 312CC
 # Documentație Fossil Fairy
 ## Partea I – Construirea și explorarea dataset-ului
 
